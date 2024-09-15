@@ -90,28 +90,22 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script type="text/javascript">
-        (function() {
-            emailjs.init("mYUoi8Anol3ccQEQK");
-        })();
+    (function() {
+        emailjs.init("mYUoi8Anol3ccQEQK");
+    })();
 
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
 
-            var recaptchaResponse = grecaptcha.getResponse(); // Get reCAPTCHA response token
+        emailjs.sendForm('service_mhhnpzt', 'template_p2u0v6v', this)
+            .then(function() {
+                alert('Message sent successfully!');
+            }, function(error) {
+                alert('Failed to send the message. Please try again later.');
+            });
+    });
+</script>
 
-            if (recaptchaResponse.length === 0) {
-                alert('Please complete the reCAPTCHA.');
-                return;
-            }
-
-            emailjs.sendForm('service_mhhnpzt', 'template_p2u0v6v', this)
-                .then(function() {
-                    alert('Message sent successfully!');
-                }, function(error) {
-                    alert('Failed to send the message. Please try again later.');
-                });
-        });
-    </script>
 
     <!-- Scripts -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
