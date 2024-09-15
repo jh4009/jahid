@@ -1,0 +1,95 @@
+/* Text fade animation */
+
+.fade-out {
+    animation: fadeOut 1s forwards;
+}
+
+.fade-in {
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* Add this to your existing style.css */
+
+#job-title {
+    display: inline-block;
+    white-space: nowrap;
+    border-right: 2px solid;
+    animation: blink 0.75s step-end infinite;
+}
+
+
+/* Cursor blink animation */
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+
+/* Modern Minimal Color Scheme */
+
+
+/* Navigation */
+
+
+/* Section */
+
+#profile {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.section__text__p1 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.title {
+    font-size: 40px;
+    margin: 10px 0;
+    color: #008080;
+    /* Teal */
+}
+
+.section__text__p2 {
+    font-size: 24px;
+    margin: 0;
+    color: #F08080;
+    /* Light Coral */
+}
+
+
+/* Slide Animation */
+
+.hidden {
+    opacity: 0;
+    transform: translateY(-50px);
+    /* Move content 50px upwards */
+    transition: all 1s ease-in-out;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+    /* Reset to normal position */
+}
